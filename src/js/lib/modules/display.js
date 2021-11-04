@@ -1,6 +1,6 @@
-import $ from '../core';
+import { Elem } from '../core';
 
-$.prototype.show = function () {
+Elem.prototype.show = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) continue;
 
@@ -9,7 +9,7 @@ $.prototype.show = function () {
   return this;
 };
 
-$.prototype.hide = function () {
+Elem.prototype.hide = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) continue;
 
@@ -18,7 +18,7 @@ $.prototype.hide = function () {
   return this;
 };
 
-$.prototype.toggle = function () {
+Elem.prototype.toggle = function () {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].style) continue;
 

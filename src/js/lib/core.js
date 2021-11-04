@@ -1,9 +1,16 @@
-const $ = (selector) => {
+function $(selector) {
   return new Elem(selector);
-};
+}
 
 function Elem(selector) {
   if (!selector) {
+    return this;
+  }
+
+  // Проверяем, не получили ли мы в качестве селектора html-узел.
+  if (selector.tagName) {
+    this[0] = selector;
+    this.length = 1;
     return this;
   }
 
@@ -16,4 +23,4 @@ $.prototype = Elem.prototype;
 
 window.$ = $;
 
-export default $;
+export { Elem, $ };

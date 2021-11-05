@@ -1,5 +1,7 @@
 function $(selector) {
-  return new Elem(selector);
+  const elem = new Elem(selector);
+  elem.prototype = Elem.prototype;
+  return elem;
 }
 
 function Elem(selector) {
@@ -7,7 +9,7 @@ function Elem(selector) {
     return this;
   }
 
-  // Проверяем, не получили ли мы в качестве селектора html-узел.
+  // Проверяем, не получили ли мы в качестве селектора html-элемент. У элемента есть свойство tagName.
   if (selector.tagName) {
     this[0] = selector;
     this.length = 1;
@@ -19,7 +21,7 @@ function Elem(selector) {
   return this;
 }
 
-$.prototype = Elem.prototype;
+// $.prototype = Elem.prototype;
 
 window.$ = $;
 

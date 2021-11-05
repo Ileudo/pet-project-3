@@ -381,14 +381,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.click = function (callback)
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('button').on('click', function () {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('div').eq(2).toggleClass('active');
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('#first').on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('div').eq(1).fadeOut(800);
 });
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('div').click(function () {
-  console.log(Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])(this).index());
-}); // console.log($('div').eq(2).find('.some'));
-
-console.log(Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('.some').closest('.findme'));
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('[data-count="second"]').on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('div').eq(2).fadeOut(800);
+});
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('button').eq(2).on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('.w-500').fadeOut(800);
+});
 
 /***/ })
 

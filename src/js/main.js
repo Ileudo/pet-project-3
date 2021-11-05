@@ -14,15 +14,26 @@ $('button')
     $('.w-500').fadeOut(800);
   });
 
-$('.wrap').html(`
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown menu</button>
-    <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
-      <a href="#" class="dropdown-item">Action1</a>
-      <a href="#" class="dropdown-item">Action2</a>
-      <a href="#" class="dropdown-item">Action3</a>
-    </div>
-  </div>
-`);
-
-$('.dropdown-toggle').dropdown();
+$('#trigger').click(() =>
+  $('#trigger').createModal({
+    text: {
+      title: 'Modal Title',
+      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum minus doloremque nesciunt',
+    },
+    btns: {
+      count: 3,
+      settings: [
+        ['Close', ['btn-danger', 'mr-10'], true],
+        [
+          'Save changes',
+          ['btn-success'],
+          false,
+          () => {
+            alert('Данные сохранены');
+          },
+        ],
+        ['Another btn', ['btn-warning', 'ml-10'], false, () => alert('Hello world!')],
+      ],
+    },
+  })
+);

@@ -86,6 +86,31 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/lib/components/dropdown.js":
+/*!*******************************************!*\
+  !*** ./src/js/lib/components/dropdown.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.dropdown = function () {
+  for (let i = 0; i < this.length; i++) {
+    const id = this[i].getAttribute('id');
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["$"])(this[i]).click(() => {
+      Object(_core__WEBPACK_IMPORTED_MODULE_0__["$"])(`[data-toggle-id="${id}"`).fadeToggle(300);
+    });
+  }
+};
+
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["$"])('.dropdown-toggle').dropdown();
+
+/***/ }),
+
 /***/ "./src/js/lib/core.js":
 /*!****************************!*\
   !*** ./src/js/lib/core.js ***!
@@ -144,8 +169,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_classes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/classes */ "./src/js/lib/modules/classes.js");
 /* harmony import */ var _modules_handlers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/handlers */ "./src/js/lib/modules/handlers.js");
 /* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/actions */ "./src/js/lib/modules/actions.js");
-/* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_actions__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _modules_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/effects */ "./src/js/lib/modules/effects.js");
+/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dropdown */ "./src/js/lib/components/dropdown.js");
+
 
 
 
@@ -160,10 +186,122 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************!*\
   !*** ./src/js/lib/modules/actions.js ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\src\\js\\lib\\modules\\actions.js: 'return' outside of function. (67:2)\n\n\u001b[0m \u001b[90m 65 |\u001b[39m   \u001b[33mObject\u001b[39m\u001b[33m.\u001b[39massign(\u001b[36mthis\u001b[39m\u001b[33m,\u001b[39m newObj)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 66 |\u001b[39m   \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mlength \u001b[33m=\u001b[39m newObj\u001b[33m.\u001b[39mlength\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m   \u001b[36mreturn\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 68 |\u001b[39m }\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 69 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 70 |\u001b[39m \u001b[33mElem\u001b[39m\u001b[33m.\u001b[39mprototype\u001b[33m.\u001b[39mclosest \u001b[33m=\u001b[39m \u001b[36mfunction\u001b[39m(selector) {\u001b[0m\n    at Parser._raise (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:541:17)\n    at Parser.raiseWithData (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:534:17)\n    at Parser.raise (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:495:17)\n    at Parser.parseReturnStatement (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13655:12)\n    at Parser.parseStatementContent (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13335:21)\n    at Parser.parseStatement (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13285:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13874:25)\n    at Parser.parseBlockBody (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13865:10)\n    at Parser.parseProgram (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13207:10)\n    at Parser.parseTopLevel (C:\\Users\\Илья\\OneDrive\\Desktop\\Udemy Projects\\Part 4\\node_modules\\@babel\\parser\\lib\\index.js:13198:25)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.html = function (content) {
+  for (let i = 0; i < this.length; i++) {
+    if (content) {
+      this[i].innerHTML = content;
+    } else {
+      return this[i].innerHTML;
+    }
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.eq = function (i) {
+  const swap = this[i];
+  const objLength = Object.keys(this).length;
+
+  for (let i = 0; i < objLength; i++) {
+    delete this[i];
+  }
+
+  this[0] = swap;
+  this.length = 1;
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.index = function () {
+  const parent = this[0].parentNode; // используется только на одном элементе
+
+  const childs = [...parent.children];
+  return childs.findIndex(item => item === this[0]);
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.find = function (selector) {
+  let numberOfItems = 0;
+  let counter = 0;
+  const copyObj = Object.assign({}, this);
+
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].querySelectorAll(selector);
+
+    if (arr.length == 0) {
+      continue;
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+      this[counter] = arr[j];
+      counter++;
+    }
+
+    numberOfItems += arr.length;
+  }
+
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+
+  for (; numberOfItems < objLength; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.closest = function (selector) {
+  let counter = 0;
+
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i].closest(selector);
+    counter++;
+  }
+
+  const objLength = Object.keys(this).length;
+
+  for (; counter < objLength; counter++) {
+    delete this[counter];
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["Elem"].prototype.siblings = function () {
+  let numberOfItems = 0;
+  let counter = 0;
+  const copyObj = Object.assign({}, this);
+
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].parentNode.children;
+
+    for (let j = 0; j < arr.length; j++) {
+      if (copyObj[i] === arr[j]) {
+        continue;
+      }
+
+      this[counter] = arr[j];
+      counter++;
+    }
+
+    numberOfItems += arr.length - 1;
+  }
+
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+
+  for (; numberOfItems < objLength; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+
+  return this;
+};
 
 /***/ }),
 
@@ -418,6 +556,17 @@ Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('[data-count="second"]').on('
 Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('button').eq(2).on('click', () => {
   Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('.w-500').fadeOut(800);
 });
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('.wrap').html(`
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown menu</button>
+    <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+      <a href="#" class="dropdown-item">Action1</a>
+      <a href="#" class="dropdown-item">Action2</a>
+      <a href="#" class="dropdown-item">Action3</a>
+    </div>
+  </div>
+`);
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["$"])('.dropdown-toggle').dropdown();
 
 /***/ })
 
